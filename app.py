@@ -77,10 +77,10 @@ st.markdown("---")
 
 st.subheader("Extração automática de Consumo e Demanda (Ponta/Fora de Ponta)")
 
-# 1. Coloque sua chave de API aqui
-CHAVE_API = "AIzaSyDAIED6bWW0YLKmTeKtPRXA_96OnooKLhs"
-genai.configure(api_key=CHAVE_API)
+# 1. Coloque sua chave de API aqui (agora protegida no Streamlit)
+genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 modelo = genai.GenerativeModel('gemini-2.5-flash')
+
 
 # Função que faz o trabalho pesado (Cérebro)
 import time # Adicionamos o import do tempo aqui em cima da função!
